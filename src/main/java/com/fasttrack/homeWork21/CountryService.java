@@ -70,13 +70,7 @@ public class CountryService {
                 .filter(Predicate.not(c -> c.getNeighbour().contains(neighbour2)))
                 .collect(Collectors.toList());
     }
-
-    public List<Country> getCountriesInContinentSorted(String continent){
-        return countries.stream()
-                .filter(c -> c.getContinent().equals(continent))
-                .sorted(Comparator.comparing(Country::getArea))
-                .collect(Collectors.toList());
-    }
+    
 
     public Map<String,Long> getCountryToPopulation(){
         return countries.stream()
